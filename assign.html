@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
+  <title>Assignment</title>
+</head>
+
+<body>
+
+  <div class="w-[20px] justify-center mx-auto pr-[11rem] mt-[5rem] h-[10px]  text-gray-500">
+    <select class="shadow-sm border-gray-300 px-[44px] py-2 rounded-lg" name="" id="">
+      <option value="English">English (UK)</option>
+      <option value="Spanish"></option>
+      <option value="Dutch"></option>
+    </select>
+  </div>
+
+  </div>
+  <diV class="border-current border-[1px] shadow-sm border-gray-300 rounded-lg  h-[40rem] relative m-[100px] w-[30rem] mx-auto">
+    <div class=" flex justify-center">
+      <div class=" mt-[5rem]">
+        <img src="images/Logo-Instagram.png" alt="" class="w-[205px] flex mx-[30px]">
+        <div class="">
+          <img src="images/facebook.png" class="w-[20px] absolute mt-[9px] ml-[20px] " alt="logof"> </div>
+        <button type="submit"
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-[270px] px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800  ">
+          Continue with Facebook</button>
+        <div class="">
+          <div class=" flex justify-center space-x-4  my-[20px]">
+            <div>
+              <hr class="border-[1px] my-2 w-[99.5px] ">
+            </div>
+            <div class="">
+              <h5 class="text-sm">OR</h5>
+            </div>
+            <div>
+              <hr class="border-[1px] my-2 w-[99.5px]">
+            </div>
+          </div>
+        </div>
+
+        <form action="loginForm" id="loginForm">
+          <div class="mb-3">
+            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"></label>
+            <input type="email" id="email"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Phone Number, Username, or Email" required>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="block  text-sm font-medium text-gray-900 dark:text-white"></label>
+            <input type="password" id="password" placeholder="Password"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              required>
+          </div>
+          <p class="text-blue-600 ml-[86px] leading-2 mb-6">Forgotten Your Password?</p>
+          <button type="log in"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full p-2.5 sm:w-[270px] px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Log
+            In</button>
+        </form>
+
+
+        <p class="mt-[30px] flex justify-center font-semibold whitespace-pre">Don't have an account? <a href=""
+            class="text-blue-600"> Sign Up</a></p>
+
+
+      </diV>
+    </div>
+
+  </div>
+  </div>
+  </div>
+  <div class="border-t-[1px] shadow-sm border-gray-300  w-full mr-[5rem] button-0  mt-[1rem] absolute h-[5rem]">
+    <div class="mx-auto w-[10rem] items-center mt-[30px]">
+      <p class="text-center">from</p>
+      <img src="images/download.png" alt="meta" class="w-[100px] pb-[5px] mx-auto">
+    </div>
+  </div>
+  <script>
+  const form = document.getElementById('loginForm');
+        const email = document.getElementById('email');
+        const password = document.getElementById('password');
+
+        form.addEventListener('submit', function(event) {
+            if (!validateEmail(email.value)) {
+                alert('Invalid email address');
+                event.preventDefault();
+            }
+
+            if (!validatePassword(password.value)) {
+                alert('Password must be at least 6 characters long');
+                event.preventDefault();
+            }
+        });
+
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function validatePassword(password) {
+            return password.length >= 6;
+        }
+    </script>
+
+
+
+
+
+
+
+</body>
+
+</html>

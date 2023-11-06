@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color:#c5a3c3 ;
+}
+.bog{
+    display: flex;
+    margin-top: 20%;
+    gap: 6%;
+    margin-left: 512px;
+}
+.fristfr{
+    display: flex; 
+}
+.fristfr1{
+      display: flex; 
+      margin-bottom: 15px;
+}
+.form2 button{
+align-self: center;
+}
+.imgg img{
+    margin-bottom: 8px;
+    margin-top: 15px;
+    margin-left: 66px;
+    width: 35px;
+}
+.right-box{
+    align-content: center;
+}
+.left-box{
+    margin-top: 63px;
+
+}

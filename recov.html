@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
+    <title>Document</title>
+</head>
+<body>
+    <img src="images/Logo-Instagram.png" alt="ig logo" class="w-[105px] ml-[13rem] mt-[3px]">
+    <div class="border-b-[1px] shadow-sm border-gray-300  w-full "></div>
+        
+    </div>
+    <div>
+        <diV class="border-current border-[1px] mb-[7rem] shadow-sm border-gray-300 rounded-lg  h-[34rem] relative mt-[3rem] w-[24rem] mx-auto">
+        <div>
+            <img src="images/lock.png" alt="" class="w-[7rem] mx-auto mt-[1rem]">
+            <h4 class="font-semibold text-center mt-[10px]">Trouble with logging in?</h4>
+            <p class=" font-[350] text-center text-[14px] mt-[6px] text-gray-500 ">
+                Enter your email address, phone number<br> or username,
+                 and we'll send you a link 
+                to get back <br> into your account.
+            </p>
+        </div>
+        <form class="w-[18rem] mx-auto mt-[12px]" id="reveryForm">
+            <input type="email" id="email"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-[8px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Phone Number, Username, or Email">
+            <button type="submit" 
+            class="text-gray-200 bg-blue-300 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full p-[5px] mt-[12px] text-center dark:bg-blue-600 dark:hover:bg-blue-500 dark:focus:ring-blue-800">Send
+            Login Link</button>
+            <p class="text-center text-[12px] mt-[12px]"><a href="">Can't reset your Password</a></p>
+        </form>
+        <div class="">
+            <div class=" flex justify-center space-x-4  my-[20px]">
+              <div>
+                <hr class="border-[1px] my-2 w-[99.5px] ">
+              </div>
+              <div class="">
+                <h5 class="text-sm text-gray-500 font-medium">OR</h5>
+              </div>
+              <div>
+                <hr class="border-[1px] my-2 w-[99.5px]">
+              </div>
+            </div>
+          </div>
+          <p class="text-[14px] text-center font-medium hover:text-gray-400" ><a href=""> Create New Account</a></p>
+
+          <div class="border-t-[1px] border-gray-300 h-[50px]   mt-[4rem]" >
+            <p class="text-[14px] text-center align-middle mt-[10PX] font-medium hover:text-gray-200" ><a href=""> Back To Login</a></p>
+          </div>
+        </diV>
+    </div>
+    <script>
+      const form = document.getElementById('reveryForm');
+            const email = document.getElementById('email');
+    
+            form.addEventListener('submit', function(event) {
+                if (!validateEmail(email.value)) {
+                    alert('Invalid email address');
+                    event.preventDefault();
+                }
+    
+            });
+    
+            function validateEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+        </script>
+</body>
+</html>

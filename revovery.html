@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
+    <title>Document</title>
+</head>
+<body>
+    <body>
+        <div class="border-t-[1px] shadow-sm border-gray-300  w-full mr-[5rem] mt-[1rem] absolute h-[5rem]">
+
+        </div>
+        <h2>Password Recovery</h2>
+        <form id="recoveryForm">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+    
+            <button type="submit">Recover Password</button>
+        </form>
+    
+        <script>
+            const recoveryForm = document.getElementById('recoveryForm');
+            const email = document.getElementById('email');
+    
+            recoveryForm.addEventListener('submit', function(event) {
+                if (!validateEmail(email.value)) {
+                    alert('Invalid email address');
+                    event.preventDefault();
+                }
+            });
+    
+            function validateEmail(email) {
+                // Regular expression for basic email validation
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+        </script>
+</body>
+</html>

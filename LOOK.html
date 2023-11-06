@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h3>List of cars</h3>
+        <ol id="list">
+            
+        </ol>
+        <form action="">
+            <label for="">Add car</label>
+            <input type="text" id="car"/>
+            <button onclick="additem()">Add</button>
+
+        </form>
+    </div>
+    <script>
+        var carList = ["toyota"];
+
+        function additem(){
+            var data = document.getElementById("car").value;
+            document.write(data);
+        }
+        /*for(var a = 30; a > 1; a--) {
+            document.write(a + "<br>")
+        }
+        var movies = ["Never have i ever", "XO KITTY"];
+        Document.write(movies);*/
+        /*a = 2;
+        for( var x = 1; x <= 12; x++){
+            document.write(x+  " x 2" + "=" + a);
+            document.write("<br>");
+            a+=2;
+        }*/
+        </script>
+</body>
+</html>

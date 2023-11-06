@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iPhone Digital Calculator</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .iPhone {
+        width: 360px;
+        height: 100vh;
+        background-color: #000;
+        margin-left: auto;
+        margin-right: auto;
+        overflow: hidden;
+      }
+
+      .answer-area {
+        height: 25vh;
+        padding-left: 10px;
+        padding-right: 10px;
+        position: relative;
+        margin-left: 35px;
+        margin-right: 35px;
+      }
+
+      .answer-area input {
+        background-color: transparent;
+        font-size: 4rem;
+        width: 100%;
+        border: 0;
+        outline: 0;
+        color: white;
+        text-align: right;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+
+      .buttons-row {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+
+      .buttons-row button {
+        border-radius: 4.5rem;
+        height: 4.5rem;
+        width: 4.5rem;
+        border: 0;
+        font-size: 2rem;
+        background-color: #313131;
+        color: white;
+      }
+
+      .button-area {
+        padding: 12px;
+        height: 75vh;
+      }
+
+      .zero {
+        width: 160px !important;
+        text-align: start;
+        padding-left: 30px;
+      }
+
+      .first-row button {
+        background-color: #9f9f9f;
+        color: #000;
+      }
+
+      .buttons-row button:last-child {
+        background-color: orange;
+        color: white;
+      }
+
+      @media only screen and (max-width: 768px) {
+        .iPhone {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="iPhone">
+      <!-- Answer area container -->
+      <div class="answer-area ans">
+        <input id="answer" type="text" placeholder="0" />
+      </div>
+
+      <!-- Buttons area container -->
+      <div class="button-area">
+        <div class="buttons-row first-row">
+          <button type="button" onclick="deleteData()">AC</button>
+          <button type="button" onclick="deleteOne()">DE</button>
+          <button type="button" onclick="getvalue('%')">%</button>
+          <button type="button" onclick="getvalue('/')">&#247;</button>
+        </div>
+
+        <div class="buttons-row">
+          <button type="button" onclick="getvalue(7)">7</button>
+          <button type="button" onclick="getvalue(8)">8</button>
+          <button type="button" onclick="getvalue(9)">9</button>
+          <button type="button" onclick="getvalue('*')">x</button>
+        </div>
+
+        <div class="buttons-row">
+          <button type="button" onclick="getvalue(4)">4</button>
+          <button type="button" onclick="getvalue(5)">5</button>
+          <button type="button" onclick="getvalue(6)">6</button>
+          <button type="button" onclick="getvalue('-')">-</button>
+        </div>
+
+        <div class="buttons-row">
+          <button type="button" onclick="getvalue(1)">1</button>
+          <button type="button" onclick="getvalue(2)">2</button>
+          <button type="button" onclick="getvalue(3)">3</button>
+          <button type="button" onclick="getvalue('+')">+</button>
+        </div>
+
+        <div class="buttons-row">
+          <button type="button" class="zero" onclick="getvalue(0)">0</button>
+          <button type="button" onclick="getvalue('.')">.</button>
+          <button type="button" onclick="calculate()">=</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Evaluate the input value (i.e calculate and return the answer)
+      function calculate() {
+        var answer = document.getElementById("answer").value;
+        var calculate = eval(answer);
+        document.getElementById("answer").value = calculate;
+      }
+
+      // Delete everything
+      function deleteData() {
+        document.getElementById("answer").value = "";
+      }
+
+      // Delete one by one
+      function deleteOne() {
+        var value = document.getElementById("answer").value;
+        document.getElementById("answer").value = value.slice(0, -1);
+      }
+
+      //get and update answer
+      function getvalue(num) {
+        var value = document.getElementById("answer").value;
+        document.getElementById("answer").value = value += num;
+      }
+    </script>
+  </body>
+</html>
